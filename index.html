@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You 👉🏻👈🏻</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+}
+
+/* GAME */
+#game {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 15px;
+    justify-content: center;
+}
+
+.grid span {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* PAGES */
+.page {
+    display: none;
+    padding: 20px;
+}
+
+img {
+    width: 250px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    background: white;
+    color: #ff6f91;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- GAME -->
+<div id="game">
+    <h1>Choose the right heart ❤️</h1>
+    <div class="grid">
+        <span onclick="wrong()">💖</span>
+        <span onclick="wrong()">💖</span>
+        <span onclick="correct()">❤️</span> <!-- TOP RIGHT -->
+        
+        <span onclick="wrong()">💖</span>
+        <span onclick="wrong()">💖</span>
+        <span onclick="wrong()">💖</span>
+        
+        <span onclick="wrong()">💖</span>
+        <span onclick="wrong()">💖</span>
+        <span onclick="wrong()">💖</span>
+    </div>
+</div>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page">
+    <h1>Happyyy Birthdayyy Jiii❤️</h1>
+
+    <p id="letter1">
+        <!-- WRITE YOUR LETTER HERE -->
+        Happy Birthdayy Aapko jiii 👉🏻👈🏻👉🏻👈🏻
+      IRL to nii, Virtual Cake hi sahi meri tarf se
+      Sugar ni hogi, pyawrr howga
+    </p>
+
+    <h2>🎂</h2>
+
+    <button onclick="blowCandles()">Blow Candles 🎉</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <h2>Bless me with your touch ❤️</h2>
+    <button onclick="goToFinal()">Touch here</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div id="final" class="page">
+    <h1>For You ❤️</h1>
+
+    <p>
+        <!-- BIG LETTER -->
+        Sooo....
+      Hindi me kehna would be hard, English me khunga
+      Ahhh, Haapppiiesstt Birthdayyy Dear, till now the year was too Harsh on you; exams, ex, parents, etc. You're really the most courageous ldki I've ever seen, but sometimes, even you get depressed. At that exact moment, i decided I'd be with you no matter what. Maybe I can't console you, but atleast you'll never ever ever feel alone. And yeah, I... ahh..; I genuinely like you ALOTTTTTYYTT. But, ik you don't. Well, i respect you, your decision, your texts, your presence; yarr your everything. But, Deep down, always wished us to be together. Never wanted to be your friend, but....; I accept I'm not that good looking, and maybe I can't change that. But yes or no, no matter what, you'll be the Lumina to me. I don't think mai ye aapko bhejunga, but if you're reading thisss, Happiesttt Birthdayyy ever dearrr, remember, you've one of the most selfless by your side.
+    </p>
+
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+</div>
+
+<audio id="music" src="song.mp3"></audio>
+
+<script>
+function wrong() {
+    alert("Not this one… try again 💔");
+}
+
+function correct() {
+    document.getElementById("game").style.display = "none";
+    document.getElementById("page1").style.display = "block";
+}
+
+function blowCandles() {
+    alert("Make a wish… ✨");
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+}
+
+function goToFinal() {
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("final").style.display = "block";
+    document.getElementById("music").play();
+}
+</script>
+
+</body>
+  </html>
